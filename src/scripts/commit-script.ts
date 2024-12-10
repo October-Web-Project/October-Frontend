@@ -47,6 +47,7 @@ async function runCommitScript() {
             return;
         }
 
+        // 키워드 선택 프롬프트
         const { selectedKeyword } = await inquirer.prompt({
             type: 'list',
             name: 'selectedKeyword',
@@ -54,6 +55,7 @@ async function runCommitScript() {
             choices: keywords,
         });
 
+        // 커밋 메시지 입력 프롬프트
         const { commitMessage } = await inquirer.prompt({
             type: 'input',
             name: 'commitMessage',
