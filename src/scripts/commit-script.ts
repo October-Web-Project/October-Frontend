@@ -70,6 +70,7 @@ async function runCommitScript() {
         const fullCommitMessage = `${selectedKeyword}: ${commitMessage}`;
 
         exec(`git commit -m "${fullCommitMessage}"`, (error, stdout, stderr) => {
+            // 에러가 있으면 커밋 실패
             if (error || stderr) {
                 console.error('커밋 실패:', error?.message || stderr);
                 return;
