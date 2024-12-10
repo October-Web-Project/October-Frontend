@@ -1,4 +1,4 @@
-import inquirer, { DistinctQuestion } from 'inquirer';
+import inquirer from 'inquirer';
 import { exec } from 'child_process';
 
 const keywords = [
@@ -34,7 +34,7 @@ const keywords = [
 
 async function runCommitScript() {
     // 스테이징된 파일만 확인
-    exec('git diff --cached --name-only', async (error, stdout, stderr) => {
+    exec('git diff --cached --name-only', async (error, stdout) => {
         // 에러가 있으면 커밋 불가
         if (error) {
             console.error('Git 상태 확인 실패:', error.message);
