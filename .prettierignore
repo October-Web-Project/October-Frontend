@@ -1,0 +1,17 @@
+node_modules
+.next
+build
+dist
+
+# 캐시 파일들
+.cache
+.vercel
+.env*
+
+# 빌드 결과물
+out/
+coverage/
+
+# 기타
+*.log
+.DS_Store
