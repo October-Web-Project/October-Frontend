@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "tsx ./src/scripts/commit-script.ts commit"
+    "commit": "tsx ./src/scripts/commit-script.ts"
   },
   "dependencies": {
     "inquirer": "^12.2.0",
