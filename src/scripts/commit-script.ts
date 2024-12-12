@@ -1,5 +1,5 @@
-import inquirer from "inquirer";
 import { exec } from "child_process";
+import inquirer from "inquirer";
 
 const keywords = [
   {
