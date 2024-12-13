@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="kr" className={`${pretendard.variable} antialiased`}>
+    <html lang="ko" className={`${pretendard.variable} antialiased`}>
       <body className={`${pretendard.variable} antialiased`}>{children}</body>
     </html>
   );
