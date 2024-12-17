@@ -1,16 +1,9 @@
 import { PropsWithChildren } from "react";
 
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 
+import { pretendard } from "./fonts";
 import "./globals.css";
-
-const pretendard = localFont({
-  src: "./fonts/PretendardVariable.woff2",
-  display: "swap",
-  weight: "45 920",
-  variable: "--font-pretendard",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
