@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
-    <html lang="ko" className={`${pretendard.variable} antialiased`}>
+    <html lang="ko">
       <body className={`${pretendard.variable} antialiased`}>{children}</body>
     </html>
   );
