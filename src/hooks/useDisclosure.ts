@@ -27,6 +27,7 @@ const useDisclosure = (initialState: boolean = false) => {
 
   return {
     isOpen,
+    setIsOpen,
     onOpen,
     onClose,
     onToggle,
