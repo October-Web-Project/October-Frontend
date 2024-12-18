@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const KAKAO_MAP_CONFIG = {
   url: "//dapi.kakao.com/v2/maps/sdk.js",
-  appkey: process.env.NEXT_PUBLIC_KAKAO_MAP_KEY,
+  appkey: process.env.NEXT_PUBLIC_KAKAO_MAP_KEY || "",
   libraries: ["services", "clusterer"].join(","),
 };
 
@@ -14,12 +14,18 @@ export default function useKakaoMapLoad() {
   useEffect(() => {
     let scriptElement: HTMLScriptElement | null = null;
 
+    const params = {
+      appkey: KAKAO_MAP_CONFIG.appkey,
+      libraries: KAKAO_MAP_CONFIG.libraries,
+      autoload: "false",
+    };
+
+    const queryString = Object.entries(params)
+      .map(([key, value]) => `${key}=${value}`)
+      .join("&");
+
     scriptElement = document.createElement("script");
-    scriptElement.src =
-      `${KAKAO_MAP_CONFIG.url}?` +
-      `appkey=${KAKAO_MAP_CONFIG.appkey}&` +
-      `libraries=${KAKAO_MAP_CONFIG.libraries}&` +
-      `autoload=false`;
+    scriptElement.src = `${KAKAO_MAP_CONFIG.url}?${queryString}`;
     scriptElement.type = "text/javascript";
     scriptElement.async = true;
 
