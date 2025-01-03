@@ -18,7 +18,7 @@ export default function useKakaoMapLoad() {
 
     const params = new URLSearchParams({
       appkey: KAKAO_MAP_CONFIG.appkey,
-      libraries: KAKAO_MAP_CONFIG.libraries.join(","),
+      libraries: KAKAO_MAP_CONFIG.libraries,
       autoload: "false",
     });
 
