@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 
+import { ENV } from "@/constants/env";
+
 const KAKAO_MAP_CONFIG = {
   url: "//dapi.kakao.com/v2/maps/sdk.js",
-  appkey: process.env.NEXT_PUBLIC_KAKAO_MAP_KEY || "",
+  appkey: ENV.KAKAO_CLIENT_ID,
   libraries: ["services", "clusterer"].join(","),
 };
 
