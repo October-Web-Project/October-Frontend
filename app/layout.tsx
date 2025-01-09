@@ -1,10 +1,9 @@
 import { PropsWithChildren } from "react";
 
 import type { Metadata } from "next";
-import { getServerSession } from "next-auth";
 
 import AuthSessionProvider from "@/components/providers/AuthSessionProvider";
-import { authOptions } from "@/constants/auth";
+import { auth } from "@/utils/auth";
 
 import { pretendard } from "./fonts";
 import "./globals.css";
@@ -17,7 +16,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<PropsWithChildren>) {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
 
   return (
     <html lang="ko">
